@@ -2,7 +2,7 @@
 import { useEffect, useRef, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import Image from "next/image";
-import { Volume2, VolumeOff } from "lucide-react";
+import { RotateCcw, Volume2, VolumeOff } from "lucide-react";
 import Link from "next/link";
 import { Suspense } from "react";
 
@@ -53,12 +53,12 @@ const resultMap: Record<string, ResultData> = {
     weak: "คนอื่นไม่เข้าใจสิ่งที่คุณพูด",
     friend: {
       name: "Brr Brr Patrapim",
-      image: "/images/brr_brr_patrapim.jpeg",
+      image: "/images/brr_brr_patrapim.png",
     },
   },
   brr_brr_patrapim: {
     title: "Brr Brr Patrapim",
-    image: "/images/brr_brr_patrapim.jpeg",
+    image: "/images/brr_brr_patrapim.png",
     audio: "/audio/brr_brr_patrapim.mp3",
     description: "คุณมีเส้นเลือดสุดเซ็กซี่และจมูกยาวๆ",
     strong: "ตัวใหญ่น่าเกรงขาม",
@@ -115,10 +115,10 @@ function BrainrotResultContent() {
   };
 
   return (
-    <div className="min-h-screen bg-[#282828] text-white flex items-center justify-center p-4">
-      <div className="max-w-md w-full space-y-6">
-        <h1 className="text-center text-lg mt-4 mb-0">คุณคือ</h1>
-        <h2 className="text-center text-2xl font-bold text-blue-400">
+    <div className="min-h-screen bg-[#282828] text-white flex justify-center p-4">
+      <div className="max-w-md w-full space-y-3 mt-3">
+        <h1 className="text-center text-lg mb-0">คุณคือ</h1>
+        <h2 className="text-center text-2xl font-bold text-blue-400 mb-4">
           {resultData.title}
         </h2>
 
@@ -127,7 +127,7 @@ function BrainrotResultContent() {
           alt={resultData.title}
           width={300}
           height={300}
-          className="w-full h-auto rounded-3xl"
+          className="w-2/3 mx-auto rounded-3xl"
         />
 
         <p className="text-center text-sm text-white/90">
@@ -160,7 +160,7 @@ function BrainrotResultContent() {
               alt={resultData.friend.name}
               width={500}
               height={500}
-              className="w-24 sm:w-20 rounded-lg object-cover"
+              className="w-24 sm:w-16 rounded-lg object-cover"
             />
             <div className="mt-2">
               <p className="text-xs text-white">เพื่อนสนิทของคุณ</p>
@@ -171,7 +171,7 @@ function BrainrotResultContent() {
           </div>
         </div>
 
-        <div className="flex items-center gap-4 justify-center mt-2">
+        <div className="flex items-center gap-3 justify-center mt-2">
           <button
             onClick={toggleMute}
             className="bg-gray-700 text-white p-3 rounded-full hover:bg-gray-600 transition"
@@ -179,6 +179,11 @@ function BrainrotResultContent() {
             {isMuted ? <VolumeOff /> : <Volume2 />}
           </button>
 
+          <Link href={'/'}>
+            <button className="text-white bg-gray-700 hover:bg-gray-600 rounded-full p-3 transition">
+              <RotateCcw />
+            </button>
+          </Link>
           <Link
             className="mt-1.5"
             href="https://www.tiktok.com/@bluecat_dev"

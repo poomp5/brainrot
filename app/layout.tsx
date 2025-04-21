@@ -12,6 +12,10 @@ const kanit = Kanit({
 export const metadata: Metadata = {
   title: "Italian Brainrot | bluecat.dev",
   description: "คุณคือ Italian Brainrot ตัวไหน",
+  icons: {
+    icon: "/bluecat.png",
+    shortcut: "/bluecat.png",
+  },
 };
 
 export default function RootLayout({
