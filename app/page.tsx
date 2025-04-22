@@ -16,7 +16,7 @@ const questions = [
   "ถ้าคุณโด่งดังบน Tiktok ได้เพราะ...",
 ];
 
-const choices = [
+const choices = [ 
   [
     "ร้อง “BANANINI” ใส่พัดลม",
     "หยิบไม้กวาดมาเคาะโต๊ะ: “TUNG TUNG TUNG SAHUR!”",
